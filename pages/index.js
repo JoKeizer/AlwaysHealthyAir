@@ -1,11 +1,22 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { getProductsInCollection } from "../lib/shopify"
+import ProductList from "../components/ProductList"
 
-export default function Home() {
+export default function Home({ products }) {
+
+  console.log(products)
+
   return (
-    <div className={styles.container}>
-      <h1>Headless Shopify Store</h1>
+    <div className="text-3xl">      
+      <ProductList products={products}/>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const products = await getProductsInCollection()
+  console.log(products)
+
+  return {
+    props: { products }, 
+  }
 }
