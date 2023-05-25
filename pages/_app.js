@@ -1,15 +1,19 @@
 import 'tailwindcss/tailwind.css'
-import Layout from '../components/Layouts'
-import '../public/index.css'
+
+import Layout from '../components/Layout'
+import ShopProvider from '../context/shopContext'
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
-
+  const router = useRouter()
+  
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ShopProvider>
+      <Layout>
+        <Component {...pageProps} key={router.asPath} />
+      </Layout>
+    </ShopProvider>
   )
 }
 
 export default MyApp
-
