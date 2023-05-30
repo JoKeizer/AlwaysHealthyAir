@@ -9,11 +9,13 @@ import { formatter } from '../utils/helpers'
 
 
 export default function MiniCart({ cart }) {
+  console.log(cart, "cart")
   const cancelButtonRef = useRef()
 
   const { cartOpen, setCartOpen, checkoutUrl, removeCartItem, clearCart, cartLoading, incrementCartItem, decrementCartItem } = useContext(CartContext)
 
-  console.log(cart, "cart")
+  console.log("checkoutUrl = ", checkoutUrl )
+
 
   let cartTotal = 0
   cart.map(item => {
@@ -82,8 +84,9 @@ export default function MiniCart({ cart }) {
                                     <Image
                                       src={product.image}
                                       alt={product.title}
-                                      layout="fill"
-                                      objectFit="cover"
+                                      width={100}
+                                      height={100}
+                                  
                                     />
                                   </div>
 

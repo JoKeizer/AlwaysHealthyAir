@@ -11,7 +11,8 @@ export default function ProductPageContent({ product }) {
   product.images.edges.map((image, i) => {
     images.push(
       <SwiperSlide key={`slide-${i}`}>
-        <Image src={image.node.url} alt={image.node.altText} layout="fill" objectFit="cover" />
+        {/* <Image src={image.node.url} alt={image.node.altText} width={1000} height={1000} /> */}
+        <Image src={image.node.url} alt="hello" width={1000} height={1000} />
       </SwiperSlide>
     )
   })

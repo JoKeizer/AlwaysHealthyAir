@@ -18,9 +18,11 @@ const ProductCard = ({ product }) => {
           <div className="relative group-hover:opacity-75 h-72">
             <Image 
               src={url}
-              alt={altText}
-              layout="fill"
-              objectFit="cover"
+              // alt={altText}
+              alt="hello"
+
+              width={500}
+              height={500}
             />
           </div>
         </div>
